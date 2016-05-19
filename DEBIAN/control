@@ -1,0 +1,12 @@
+Package: photogimp
+Version: 1.0.0~dz~dio
+Architecture: all
+Maintainer: Dionatan Simioni <dionatanvs@gmail.com>
+Original-Maintainer: Claudio A. Silva <claudiosilva@duzeru.org>
+Installed-Size: 24500
+Depends: gimp (>= 2.8.14)
+Recommends: linux-image
+Section: other
+Priority: optional
+Homepage: http://diolinux.com.br
+Description: Este pacote vai adicionar várias fontes e varios recursos novos ao GIMP.

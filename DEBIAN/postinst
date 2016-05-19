@@ -1,0 +1,32 @@
+#!/bin/sh
+
+echo "iniciando a copia no diretório home"
+sleep 4
+
+#busca o(s) usuário(s)
+ls /home/ | awk '{print $1}' | cat >/tmp/usersphotogimp.txt
+
+#busca e retorna nomes dos users
+cat /tmp/usersphotogimp.txt
+
+#declara a saida do cut como variável
+var=$(cat /tmp/usersphotogimp.txt)
+
+#remove o diretório do gimp no home do usuario
+rm -R /home/$var/.gimp-2.8
+
+#envia a personalização do gimp ao(s) diretório(s) de users
+cp -Rf /etc/skel/.gimp-2.8 /home/$var/.gimp-2.8
+
+chmod -R 777 /home/$var/.gimp-2.8
+
+echo "#---Operação concluida---#"
+echo "#---duzeru.org-----------#"
+echo "#---diolinux.com.br------#"
+
+#cp /tmp/usersphotogimp.txt /home/$var/.gimp-2.8
+
+#cp /etc/skel/gimp-2.8 /home/$var/.gimp-2.8
+
+
+#cp /etc/skel/.gimp-2.8 /home/$USER/.gimp-2.8

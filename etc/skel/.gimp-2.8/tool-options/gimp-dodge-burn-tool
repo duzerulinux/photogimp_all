@@ -1,0 +1,10 @@
+# GIMP gimp-dodge-burn-tool options
+
+(foreground (color-rgb 0.937255 0.933333 0.898039))
+(background (color-rgb 0.121569 0.114894 0.114894))
+(brush "Round  middle soft LS")
+(dynamics "Pressure Opacity")
+(palette "Dark pastels")
+(brush-size 136.990000)
+
+# end of gimp-dodge-burn-tool options

@@ -1,0 +1,6 @@
+# GIMP gimp-scale-tool options
+
+(background (color-rgb 0.576471 0.243137 0.701961))
+(constrain yes)
+
+# end of gimp-scale-tool options

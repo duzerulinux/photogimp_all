@@ -1,0 +1,13 @@
+# GIMP user context
+
+(tool "gimp-move-tool")
+(paint-info "gimp-paintbrush")
+(foreground (color-rgb 0.227359 0.242906 0.258824))
+(brush "Normal Nib 1")
+(dynamics "Pressure Opacity")
+(pattern "Pine")
+(gradient "Frente para fundo (RGB)")
+(palette "Dark pastels")
+(font "Bebas")
+
+# end of user context

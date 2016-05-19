@@ -1,0 +1,8 @@
+# GIMP gimp-text-tool options
+
+(foreground (color-rgb 0.933333 0.462745 0.223529))
+(palette "Dark pastels")
+(font "Bebas")
+(justify center)
+
+# end of gimp-text-tool options
