@@ -1,32 +1,21 @@
 #!/bin/sh
 
-echo "iniciando a copia no diretório home"
-sleep 4
+rm -R /home/lost+found
 
-#busca o(s) usuário(s)
-ls /home/ | awk '{print $1}' | cat >/tmp/usersphotogimp.txt
+#echo "busca usuarios, cria script copia de diretorio"
+ls /home/ | awk '{print "cp -Rf /etc/skel/.gimp-2.8 /home/" $1 "/"}' | cat >/tmp/usersphotogimp.sh
+#echo "busca usuarios, cria script altera permissoes"
+ls /home/ | awk '{print "chown -R " $1 ":" $1 " /home/"$1"/.gimp-2.8"}' | cat >>/tmp/usersphotogimp.sh
 
-#busca e retorna nomes dos users
-cat /tmp/usersphotogimp.txt
+#echo "permissoes no dir para novos users"
+chmod -R 755 /etc/skel/.gimp-2.8
 
-#declara a saida do cut como variável
-var=$(cat /tmp/usersphotogimp.txt)
+#echo "permissoes para execucao do script criado no dir tmp"
+chmod 777 /tmp/usersphotogimp.sh
 
-#remove o diretório do gimp no home do usuario
-rm -R /home/$var/.gimp-2.8
+/tmp/usersphotogimp.sh
 
-#envia a personalização do gimp ao(s) diretório(s) de users
-cp -Rf /etc/skel/.gimp-2.8 /home/$var/.gimp-2.8
+echo "## Operação concluida ##"
+echo "Acesse: http://duzeru.org"
+echo "Acesse: diolinux.com.br"
 
-chmod -R 777 /home/$var/.gimp-2.8
-
-echo "#---Operação concluida---#"
-echo "#---duzeru.org-----------#"
-echo "#---diolinux.com.br------#"
-
-#cp /tmp/usersphotogimp.txt /home/$var/.gimp-2.8
-
-#cp /etc/skel/gimp-2.8 /home/$var/.gimp-2.8
-
-
-#cp /etc/skel/.gimp-2.8 /home/$USER/.gimp-2.8
